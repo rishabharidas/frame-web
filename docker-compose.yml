@@ -1,0 +1,13 @@
+services:
+  frame-wire:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/app
+      - ignore:/app/node_modules
+    env_file: .env
+    ports:
+      - 3000:3000
+volumes:
+  ignore:
